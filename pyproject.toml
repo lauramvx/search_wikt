@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "search_wikt"
+version = "0.0.1"
+authors = [
+  { name="lauramvx", email="lesbianhouse@gmx.com" },
+]
+description = "A simple command-line tool for searching Wiktionary."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
