@@ -1,6 +1,6 @@
 ### Search Wiktionary
 
-A simple command-line tool for searching Wiktionary using WiktionaryParser ([click](https://github.com/Suyash458/WiktionaryParser)] 
+A simple command-line tool for searching Wiktionary using WiktionaryParser ([click](https://github.com/Suyash458/WiktionaryParser))
 
 #### Installation
 No pip module yet, so you'll have to clone the repository for now.
