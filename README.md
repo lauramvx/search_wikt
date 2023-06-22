@@ -1,6 +1,14 @@
 ### Search Wiktionary
 
-A simple command-line tool for searching Wiktionary using WiktionaryParser ([click](https://github.com/Suyash458/WiktionaryParser))
+A simple command-line tool for searching English Wiktionary using Wiktionary Parser ([click](https://github.com/Suyash458/WiktionaryParser)).
+
+Wiktionary definitions are licensed under CC BY-SA 4.0.
+
+I wrote a quick and dirty version of this program last year because I wanted a way to search Wiktionary quickly while I worked. Not only does it save clicks, it also skips right to the language you care about, which is useful for words that are in a lot of languages, like "ac." I decided to brush it up into something I could share as a personal exercise to sharpen my Python skills and learn about git and other dev tools. Some other tools that do the same thing exist. Using Wiktionary Parser: 
+* wikt-cli ([click](https://pypi.org/project/wikt-cli/))
+* wkdict ([click](https://pypi.org/project/wkdict/))
+And an entire program that can search both Wiktionary and Wikipedia:
+* wikimedia-cli ([click](https://pypi.org/project/wkdict/))
 
 #### Installation
 No pip module yet, so you'll have to clone the repository for now.
