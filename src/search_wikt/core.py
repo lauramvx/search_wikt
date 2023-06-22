@@ -142,7 +142,7 @@ class Entry:
         try:
             self.definitions = page["definitions"][0]
         except IndexError:
-            print("Looks like Wiktionary doesn't have that word, sorry!")
+            print("Looks like Wiktionary doesn't have that word, sosu!")
             sys.exit(1)
 
         self.wordclass = self.definitions["partOfSpeech"]
@@ -153,12 +153,16 @@ class Entry:
 
 
 def print_encoded(statement):
-    print(statement.encode("utf-8"))
+    # this function exists to set the string's encoding
+    # ie. statement.encode("utf-8")
+    # but doing that currently breaks the output!
+    print(statement)
 
 
 def print_container(container):
+    # see above about encoding
     for item in container:
-        print(item.encode("utf-8"))
+        print(item)
 
 
 if wikt_page:
@@ -188,5 +192,5 @@ if wikt_page:
                 print_encoded(f"\n{item['relationshipType']}")
                 print_container(item["words"])
 else:
-    print("Wiktionary doesn't seem to have that language, sorry!")
+    print("Wiktionary doesn't seem to have that language, sosu!")
     sys.exit(1)

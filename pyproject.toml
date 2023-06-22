@@ -16,3 +16,5 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = ["wiktionaryparser==0.0.97"]
+keywords = ["Wiktionary", "CLI", "dictionary", "etymology"]
