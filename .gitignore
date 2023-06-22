@@ -3,3 +3,4 @@ tests/
 *~
 config.ini
 out.*
+.core.py.swp
