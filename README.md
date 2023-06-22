@@ -5,11 +5,12 @@ A simple command-line tool for searching Wiktionary using WiktionaryParser ([cli
 #### Installation
 No pip module yet, so you'll have to clone the repository for now.
 ```
-git clone [link]
+git clone https://github.com/lauramvx/search_wikt
 ```
 Then `cd` to the project directory and run:
 ```
-py src\search_wikt\core.py word [-h, --help] [-l, --language <language>] [-e, --etymology] [-i, --ipa] [-ex, --examples] [-r, --related] [-d, --default | -rd, --restore_defaults]
+py src\search_wikt\core.py word [-h, --help] [-l, --language <language>] [-e, --etymology]
+[-i, --ipa] [-ex, --examples] [-r, --related] [-d, --default | -rd, --restore_defaults]
 ```
 Run `py src\search_wikt\core.py -h` or `--help` for a more detailed explanation.
 
@@ -69,6 +70,6 @@ When attempting to pipe the output to a file I get the following error:
 ```
 UnicodeEncodeError: 'charmap' codec can't encode characters in position 6-7: character maps to <undefined>
 ```
-Using the string method `.encode("utf-8")` to the main printed strings (lines 159 and 165) fixes this, but it outputs raw unicode codes instead of characters and it also breaks the terminal formating.
+Attaching the string method `.encode("utf-8")` to the main printed strings (lines 159 and 165) fixes this, but it outputs raw unicode codes instead of characters and it also breaks the terminal formating.
 
 Upstream, unless I'm missing something, WiktionaryParser doesn't seem to grab citations attached to examples, nor does it reproduce all types of related words; this is an issue when searching Old English words.
