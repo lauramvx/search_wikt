@@ -3,6 +3,8 @@ import argparse
 import wiktionaryparser
 import configparser
 import pathlib
+import io
+
 
 # creates and reads the config file
 
@@ -152,17 +154,26 @@ class Entry:
         self.related_words_list = self.definitions["relatedWords"]
 
 
+def set_encoding():
+    # required to pipe to Out-File in PowerShell
+    sys.stdout.reconfigure(encoding="utf-8")
+
+
 def print_encoded(statement):
-    # this function exists to set the string's encoding
-    # ie. statement.encode("utf-8")
-    # but doing that currently breaks the output!
-    print(statement)
+    try:
+        print(statement)
+    except UnicodeEncodeError:
+        set_encoding()
+        print(statement)
 
 
 def print_container(container):
-    # see above about encoding
     for item in container:
-        print(item)
+        try:
+            print(item)
+        except UnicodeEncodeError:
+            set_encoding()
+            print(item)
 
 
 if wikt_page:
@@ -170,9 +181,11 @@ if wikt_page:
         content = Entry(lexical_item)
 
         if len(wikt_page) > 1:
-            print_encoded(f"{args.word} {index + 1}\n")
+            print_encoded(f"{args.word} {index + 1}")
+            print("\n")
         else:
-            print_encoded(f"{args.word}\n")
+            print_encoded(f"{args.word}")
+            print("\n")
 
         if args.etymology:
             print_encoded(content.etymology)
