@@ -180,10 +180,8 @@ if wikt_page:
 
         if len(wikt_page) > 1:
             print_encoded(f"{args.word} {index + 1}")
-            print("\n")
         else:
             print_encoded(f"{args.word}")
-            print("\n")
 
         if args.etymology:
             print_encoded(content.etymology)
