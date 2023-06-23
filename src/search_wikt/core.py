@@ -3,8 +3,6 @@ import argparse
 import wiktionaryparser
 import configparser
 import pathlib
-import io
-
 
 # creates and reads the config file
 
