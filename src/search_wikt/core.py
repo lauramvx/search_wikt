@@ -162,7 +162,7 @@ def set_encoding():
 
 
 def normalize_unicode(string):
-    normalized_string = unicodedata.normalize("NFKD", string)
+    normalized_string = unicodedata.normalize("NFC", string)
     return normalized_string
 
 
