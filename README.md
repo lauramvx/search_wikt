@@ -75,10 +75,6 @@ Nōn egō, sed tū: “Nā iċ, ac þū.” Nōn bōs est, sed equus: “Nis hit
 Non ego, sed tu: “Not me, you.” Non bos est, sed equus: “It's not an ox, it's a horse.”
 ```
 #### Issues
-When attempting to pipe the output to a file I get the following error:
-```
-UnicodeEncodeError: 'charmap' codec can't encode characters in position 6-7: character maps to <undefined>
-```
-Attaching the string method `.encode("utf-8")` to the main printed strings (lines 159 and 165) fixes this, but it outputs raw unicode codes instead of characters and it also breaks the terminal formating.
+When piping to Out-File in PowerShell on Windows I was getting an encode error; to fix it I set the encoding to utf-8. Now it doesn't make any errors, but it displays the wrong Unicode characters! I believe it's because it's trying to draw combination characters.
 
 Upstream, unless I'm missing something, WiktionaryParser doesn't seem to grab citations attached to examples, nor does it reproduce all types of related words; this is an issue when searching Old English words.
