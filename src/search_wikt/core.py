@@ -3,6 +3,7 @@ import argparse
 import wiktionaryparser
 import configparser
 import pathlib
+import unicodedata
 
 # creates and reads the config file
 
@@ -131,7 +132,7 @@ def get_definition(word, language):
 
 wikt_page = get_definition(args.word, args.language)
 
-# parses the definitions returned by wiktionaryparser and prints them
+# defines a class to parse the definitions returned by wiktionaryparser
 
 
 class Entry:
@@ -152,9 +153,17 @@ class Entry:
         self.related_words_list = self.definitions["relatedWords"]
 
 
+# some functions to handle printing unicode characters
+
+
 def set_encoding():
     # required to pipe to Out-File in PowerShell
     sys.stdout.reconfigure(encoding="utf-8")
+
+
+def normalize_unicode(string):
+    normalized_string = unicodedata.normalize("NFKD", string)
+    return normalized_string
 
 
 def print_encoded(statement):
@@ -162,7 +171,7 @@ def print_encoded(statement):
         print(statement)
     except UnicodeEncodeError:
         set_encoding()
-        print(statement)
+        print(normalize_unicode(statement))
 
 
 def print_container(container):
@@ -171,8 +180,10 @@ def print_container(container):
             print(item)
         except UnicodeEncodeError:
             set_encoding()
-            print(item)
+            print(normalize_unicode(item))
 
+
+# the main loop; prints the contents of each definition returned by wiktionaryparser
 
 if wikt_page:
     for index, lexical_item in enumerate(wikt_page):
