@@ -18,7 +18,7 @@ git clone https://github.com/lauramvx/search_wikt
 ```
 Then `cd` to the project directory and run:
 ```
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 to install the project's dependencies. To run the program, type:
 ```
