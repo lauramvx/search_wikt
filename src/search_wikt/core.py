@@ -158,10 +158,12 @@ class Entry:
 
 def set_encoding():
     # required to pipe to Out-File in PowerShell
+    # note: it will outpit with errors!
     sys.stdout.reconfigure(encoding="utf-8")
 
 
 def normalize_unicode(string):
+    # not sure if this is necessary
     normalized_string = unicodedata.normalize("NFC", string)
     return normalized_string
 
@@ -212,5 +214,6 @@ if wikt_page:
                 print_encoded(f"\n{item['relationshipType']}")
                 print_container(item["words"])
 else:
-    print("Wiktionary doesn't seem to have that language, sosu!")
+    print(f"Wiktionary has that word, sosu, but not in \"{args.language}\".")
+    print("Try choosing another language with \"-language\"!")
     sys.exit(1)
