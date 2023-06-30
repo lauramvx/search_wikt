@@ -18,10 +18,13 @@ git clone https://github.com/lauramvx/search_wikt
 ```
 Then `cd` to the project directory and run:
 ```
-py src\search_wikt\core.py word [-h, --help] [-l, --language <language>] [-e, --etymology]
-[-i, --ipa] [-ex, --examples] [-r, --related] [-d, --default | -rd, --restore_defaults]
+pip -r requirements.txt
 ```
-Run `py src\search_wikt\core.py -h` or `--help` for a more detailed explanation.
+to install the project's dependencies. To run the program, type:
+```
+py src\search_wikt\core.py apricot -language English
+```
+or any other word or language you'd like to search. Run `py src\search_wikt\core.py -h` or `--help` for a more detailed explanation.
 
 ##### Examples
 ```
@@ -30,7 +33,6 @@ py src\search_wikt\core.py hunig -l "Old English"
 
 ```
 hunig
-
 From Proto-West Germanic *hunag, from Proto-Germanic *hunagą. Cognate with Old Frisian hunig, Old Saxon honeg, and Old High German honag; also Old Norse hunang, from the alternative form *hunangą.
 
 IPA: /ˈxu.nij/, [ˈhu.nij]
@@ -43,7 +45,6 @@ py src\search_wikt\core.py ac -l "Old English" -ex -r
 ```
 ```
 ac 1
-
 From Proto-Germanic *aiks.
 
 IPA: /ɑːk/
@@ -53,10 +54,7 @@ noun
 oak (wood or tree)
 (poetic) an oaken ship
 (masculine) the runic character ᚪ (/a/)
-
-
 ac 2
-
 From Proto-Germanic *ak.
 
 IPA: /ɑːk/
