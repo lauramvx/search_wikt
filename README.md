@@ -5,13 +5,23 @@ A simple command-line tool for searching English Wiktionary using Wiktionary Par
 Wiktionary definitions are licensed under CC BY-SA 4.0. Visit wiktionary at wiktionary.org ([click](wiktionary.org)).
 
 #### Installation
-To install, run:
+To install, type:
 ```
 pip install search_wikt
 ```
-Or, to clone the repository run:
+To run the program, type:
+```
+py -m search_wikt apricot --language English
+```
+or any other word or language you'd like to search. Run `py -m search_wikt -h` or `--help` for a more detailed explanation.
+
+Alternatively, to clone the repository type:
 ```
 git clone https://github.com/lauramvx/search_wikt
+```
+then `cd` to the project directory and run:
+```
+py src\search_wikt\core.py apricot --language English
 ```
 ##### Examples
 ```
