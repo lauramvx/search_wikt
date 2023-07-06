@@ -1,6 +1,7 @@
 venv/
 tests/
 dist/
+old/
 *~
 config.ini
 out.*
