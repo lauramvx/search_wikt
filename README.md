@@ -4,6 +4,7 @@ A simple command-line tool for searching English Wiktionary using Wiktionary Par
 
 Wiktionary definitions are licensed under CC BY-SA 4.0. Visit wiktionary at wiktionary.org ([click](wiktionary.org)).
 
+This project is currently a work in progress.
 #### Installation
 To install, type:
 ```
@@ -21,11 +22,11 @@ git clone https://github.com/lauramvx/search_wikt
 ```
 then `cd` to the project directory and run:
 ```
-py src\search_wikt\core.py apricot --language English
+py src\search_wikt\__main__.py apricot --language English
 ```
 ##### Examples
 ```
-py src\search_wikt\core.py hunig -l "Old English"
+py -m search_wikt hunig -l "Old English"
 ```
 
 ```
@@ -38,7 +39,7 @@ huniġ n
 honey
 ```
 ```
-py src\search_wikt\core.py ac -l "Old English" -ex -r
+py -m search_wikt ac -l "Old English" -ex
 ```
 ```
 ac 1
